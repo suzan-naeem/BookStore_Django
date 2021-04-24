@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.core.validators import MinLengthValidator
+import uuid
 
 # Create your models here.
 
@@ -34,6 +35,7 @@ class Metric(models.Model):
 
 class ISBN(models.Model):
     #models.UUIDField(_(""))
+     #isbn_number = models.UUIDField(default = uuid.uuid4,editable=False)
     isbn_number = models.AutoField(primary_key=True)
     author_title = models.CharField(max_length=50, null=True, blank=True)
     book_title = models.CharField(max_length=50, null=True, blank=True)

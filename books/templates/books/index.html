@@ -2,6 +2,11 @@
 {% block body %}
     <a href="{% url 'create' %}">Add</a>
     <h1>list of books</h1>
+
+    {% if request.user.is_authenticated %}
+        <h1>hello {{request.user.username}}</h1>
+    {% endif %}
+
     {% for book in books %}
         <h2>Title: {{book.title}}</h2>
         <p>Description: {{book.description}}</p>
